@@ -1,0 +1,71 @@
+/* ==================================================
+               CUSTOM CURSOR
+   Single cursor unit (matches DeepSkills style):
+   - small white-bordered circle (not large)
+   - filled with a red dot at the center
+   - dot + circle move together smoothly behind the pointer
+================================================== */
+
+.customCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* Red dot — fills the inside of the white circle */
+.customCursor__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e11d48;
+  /* DeepSkills accent red */
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 0 6px rgba(225, 29, 72, 0.5);
+}
+
+/* Circle — white border with the red dot centered inside it */
+.customCursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  will-change: transform;
+  z-index: 2147483647;
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease,
+    border-color 0.25s ease, background-color 0.25s ease;
+}
+
+/* Grows over interactive elements (links / buttons) */
+.customCursor__ring.customCursor--active {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(225, 29, 72, 0.9);
+  background-color: rgba(225, 29, 72, 0.12);
+}
+
+/* Shrinks slightly when pressing */
+.customCursor__ring.customCursor--pressed {
+  width: 26px;
+  height: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .customCursor {
+    display: none;
+  }
+}
+

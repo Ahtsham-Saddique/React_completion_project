@@ -1,0 +1,194 @@
+/* ==================================================
+                HOW WE TEACH SECTION
+================================================== */
+
+.teachSection {
+  background-image: url('../../assets/images/howds-bg.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.teachSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(123, 31, 46, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.teachOverlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==================================================
+                    HEADING
+================================================== */
+
+.teachHeading {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 60px;
+}
+
+.teachHeading h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: -2px;
+}
+
+.teachSubHeading {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.teachTag {
+  background: rgba(120, 120, 120, 0.4);
+  padding: 12px 30px;
+  border-radius: 10px;
+  display: inline-block;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+
+.teachTag p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ==================================================
+                    CARDS
+================================================== */
+
+.teachCards {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.teachCard {
+  background: #a7a7a7ff;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  border: 2px solid black;
+  transition: all 0.3s ease;
+}
+
+.teachCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(123, 31, 46, 0.3);
+}
+
+.teachCardTop {
+  background: white;
+  padding: 40px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d94a5e;
+  font-size: 2.7rem;
+  transition: all 0.3s ease;
+}
+
+.teachCard:hover .teachCardTop {
+  background: #D0CBCB;
+  transform: scale(1.1);
+}
+
+.teachCardBottom {
+  background: #724747;
+  padding: 45px 10px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-top: 2px solid black;
+}
+
+.teachCardBottom p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ==================================================
+                    FOOTER
+================================================== */
+
+.teachFooter {
+  position: relative;
+  z-index: 2;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 40px;
+  font-weight: 400;
+  max-width: 800px;
+  text-align: center;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* ==================================================
+                    RESPONSIVE
+================================================== */
+
+@media (max-width: 1024px) {
+  .teachCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .teachCards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .teachHeading h2 {
+    font-size: 2.3rem;
+  }
+}
+
